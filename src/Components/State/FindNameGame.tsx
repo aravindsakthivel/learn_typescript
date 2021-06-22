@@ -1,17 +1,13 @@
 import { FC, useState } from "react";
 
-const allNames = [
-  {
-    name: "Arun",
-    age: 24,
-  },
-  {
-    name: "Vel",
-    age: 43,
-  },
-];
+interface FindNameGameProps {
+  allNames: {
+    name: string;
+    age: number;
+  }[];
+}
 
-const FindNameGame: FC = () => {
+const FindNameGame: FC<FindNameGameProps> = ({ allNames }) => {
   const [fiName, setname] = useState<string>("");
   const [founded, setfounded] =
     useState<{ name: string; age: number } | undefined>();
@@ -28,9 +24,7 @@ const FindNameGame: FC = () => {
         value={fiName}
       />
       <button onClick={clickable}>Find</button>
-      <div>
-        {founded && founded.name}
-      </div>
+      <div>{founded && founded.name}</div>
     </div>
   );
 };
