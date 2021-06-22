@@ -3,6 +3,7 @@ import { NameGame } from "./Components/State/NameGame";
 import { FindNameGame } from "./Components/State/FindNameGame";
 import { EventComp } from "./Components/Events/EventComp";
 import { FindNameGameClass } from "./Components/Classes/FindNameGameClass";
+import { FindNameGameRef } from "./Components/Refs/FindNameGameRef";
 
 const allNames = [
   {
@@ -15,7 +16,6 @@ const allNames = [
   },
 ];
 
-
 function App() {
   return (
     <div>
@@ -24,6 +24,7 @@ function App() {
       <FindNameGame allNames={allNames} />
       <EventComp />
       <FindNameGameClass users={allNames} />
+      <FindNameGameRef allNames={allNames} />
     </div>
   );
 }

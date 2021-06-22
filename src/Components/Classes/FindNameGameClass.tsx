@@ -28,7 +28,7 @@ class FindNameGameClass extends Component<FindNameProps> {
   onFindVal = () => {
     const { name } = this.state;
     const foundeduser = this.props.users.find(
-      (user: { name: string; age: number }) => {
+      (user: User) => {
         return user.name === name;
       }
     );
@@ -41,7 +41,7 @@ class FindNameGameClass extends Component<FindNameProps> {
     return (
       <div>
         <input onChange={onChangeName} value={name} />
-        <button onClick={onFindVal}>Find</button>
+        <button onClick={onFindVal}>Find in class</button>
         {user && <div>{user.name}</div>}
       </div>
     );
